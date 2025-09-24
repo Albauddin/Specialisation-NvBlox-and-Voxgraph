@@ -1,0 +1,56 @@
+# Build & logs
+build/
+devel/
+install/
+log/
+logs/
+.colcon*
+
+# Datasets / recordings / models / results
+data/
+datasets/
+records/
+results/
+*.bag
+*.db3
+*.mcap
+*.ply
+*.pcd
+*.las
+*.laz
+*.npz
+*.npy
+*.tar
+*.zip
+*.7z
+*.onnx
+*.pt
+*.pth
+*.pb
+*.stl
+*.sdf
+*.urdf      # if generated
+*.svo
+
+# CMake & cache
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
+# Large NvBlox outputs
+frameworks/NvBlox/outputs/*.bin
+
+# Large NvBlox outputs
+frameworks/NvBlox/outputs/*.bin

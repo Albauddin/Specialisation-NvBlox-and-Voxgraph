@@ -1,0 +1,5 @@
+voxblox/voxblox_rviz_plugin
+/workspace/catkin_ws/devel/.private/voxblox_rviz_plugin/share/voxblox_rviz_plugin/cmake/voxblox_rviz_pluginConfig.cmake /workspace/catkin_ws/devel/share/voxblox_rviz_plugin/cmake/voxblox_rviz_pluginConfig.cmake
+/workspace/catkin_ws/devel/.private/voxblox_rviz_plugin/share/voxblox_rviz_plugin/cmake/voxblox_rviz_pluginConfig-version.cmake /workspace/catkin_ws/devel/share/voxblox_rviz_plugin/cmake/voxblox_rviz_pluginConfig-version.cmake
+/workspace/catkin_ws/devel/.private/voxblox_rviz_plugin/lib/libvoxblox_rviz_plugin.so /workspace/catkin_ws/devel/lib/libvoxblox_rviz_plugin.so
+/workspace/catkin_ws/devel/.private/voxblox_rviz_plugin/lib/pkgconfig/voxblox_rviz_plugin.pc /workspace/catkin_ws/devel/lib/pkgconfig/voxblox_rviz_plugin.pc

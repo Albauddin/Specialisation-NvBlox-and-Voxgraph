@@ -1,0 +1,6 @@
+ouster_lidar/ouster_client
+/workspace/catkin_ws/devel/.private/ouster_client/share/ouster_client/cmake/ouster_clientConfig.cmake /workspace/catkin_ws/devel/share/ouster_client/cmake/ouster_clientConfig.cmake
+/workspace/catkin_ws/devel/.private/ouster_client/share/ouster_client/cmake/ouster_clientConfig-version.cmake /workspace/catkin_ws/devel/share/ouster_client/cmake/ouster_clientConfig-version.cmake
+/workspace/catkin_ws/devel/.private/ouster_client/lib/libouster_client.a /workspace/catkin_ws/devel/lib/libouster_client.a
+/workspace/catkin_ws/devel/.private/ouster_client/lib/ouster_client/ouster_client_example /workspace/catkin_ws/devel/lib/ouster_client/ouster_client_example
+/workspace/catkin_ws/devel/.private/ouster_client/lib/pkgconfig/ouster_client.pc /workspace/catkin_ws/devel/lib/pkgconfig/ouster_client.pc

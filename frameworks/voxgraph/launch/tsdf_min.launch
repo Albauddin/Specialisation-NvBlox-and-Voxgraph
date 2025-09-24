@@ -1,0 +1,30 @@
+<!-- save as tsdf_min.launch -->
+<launch>
+  <arg name="world_frame"  default="map"/>
+  <arg name="sensor_frame" default="camera_depth_optical_frame"/>
+
+  <node pkg="voxblox_ros" type="tsdf_server" name="voxblox_node" output="screen">
+    <!-- frames -->
+    <param name="world_frame"  value="$(arg world_frame)"/>
+    <param name="sensor_frame" value="$(arg sensor_frame)"/>
+    <param name="use_tf_transforms" value="true"/>
+
+    <!-- topics -->
+    <param name="depth_image_topic"  value="/camera/depth/image_rect_raw"/>
+    <param name="camera_info_topic"  value="/camera/depth/camera_info"/>
+
+    <!-- integrator -->
+    <param name="voxel_size"             value="0.05"/>   <!-- 5 cm voxels -->
+    <param name="truncation_distance"    value="0.15"/>   <!-- 3 * voxel_size -->
+    <param name="max_range"              value="4.0"/>    <!-- clip far depth -->
+    <param name="tsdf_integrator_max_integration_distance" value="4.0"/>
+
+    <!-- publishing -->
+    <param name="publish_tsdf_map" value="true"/>
+    <param name="publish_pointclouds" value="true"/>
+    <param name="publish_mesh" value="true"/>
+    <param name="mesh_min_weight" value="1.0"/>
+    <param name="mesh_update_rate_hz" value="2.0"/>
+  </node>
+</launch>
+

@@ -1,0 +1,6 @@
+ouster_lidar/ouster_viz
+/workspace/catkin_ws/devel/.private/ouster_viz/share/ouster_viz/cmake/ouster_vizConfig.cmake /workspace/catkin_ws/devel/share/ouster_viz/cmake/ouster_vizConfig.cmake
+/workspace/catkin_ws/devel/.private/ouster_viz/share/ouster_viz/cmake/ouster_vizConfig-version.cmake /workspace/catkin_ws/devel/share/ouster_viz/cmake/ouster_vizConfig-version.cmake
+/workspace/catkin_ws/devel/.private/ouster_viz/lib/libouster_viz.a /workspace/catkin_ws/devel/lib/libouster_viz.a
+/workspace/catkin_ws/devel/.private/ouster_viz/lib/ouster_viz/viz /workspace/catkin_ws/devel/lib/ouster_viz/viz
+/workspace/catkin_ws/devel/.private/ouster_viz/lib/pkgconfig/ouster_viz.pc /workspace/catkin_ws/devel/lib/pkgconfig/ouster_viz.pc

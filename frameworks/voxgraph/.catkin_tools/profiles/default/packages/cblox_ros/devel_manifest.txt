@@ -1,0 +1,7 @@
+cblox/cblox_ros
+/workspace/catkin_ws/devel/.private/cblox_ros/share/cblox_ros/cmake/cblox_rosConfig-version.cmake /workspace/catkin_ws/devel/share/cblox_ros/cmake/cblox_rosConfig-version.cmake
+/workspace/catkin_ws/devel/.private/cblox_ros/share/cblox_ros/cmake/cblox_rosConfig.cmake /workspace/catkin_ws/devel/share/cblox_ros/cmake/cblox_rosConfig.cmake
+/workspace/catkin_ws/devel/.private/cblox_ros/lib/libcblox_ros.so /workspace/catkin_ws/devel/lib/libcblox_ros.so
+/workspace/catkin_ws/devel/.private/cblox_ros/lib/cblox_ros/esdf_submap_server /workspace/catkin_ws/devel/lib/cblox_ros/esdf_submap_server
+/workspace/catkin_ws/devel/.private/cblox_ros/lib/cblox_ros/tsdf_submap_server /workspace/catkin_ws/devel/lib/cblox_ros/tsdf_submap_server
+/workspace/catkin_ws/devel/.private/cblox_ros/lib/pkgconfig/cblox_ros.pc /workspace/catkin_ws/devel/lib/pkgconfig/cblox_ros.pc

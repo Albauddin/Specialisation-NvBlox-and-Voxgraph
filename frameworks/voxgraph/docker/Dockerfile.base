@@ -1,0 +1,43 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC CATKIN_WS=/workspace/catkin_ws
+
+# Base tools + enable 'universe' (needed for some Python packages)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates curl git build-essential cmake pkg-config \
+    gnupg2 lsb-release software-properties-common && \
+    add-apt-repository universe && \
+    rm -rf /var/lib/apt/lists/*
+
+# Add ROS Noetic apt repo and key
+RUN sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros1-latest.list' && \
+    curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.key | apt-key add -
+
+# Now install ROS and dev tools (catkin/vcstool/rosdep)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ros-noetic-desktop-full \
+    python3-pip python3-rosdep python3-catkin-tools python3-vcstool \
+    libeigen3-dev libgoogle-glog-dev libgflags-dev \
+    libatlas-base-dev libsuitesparse-dev libyaml-cpp-dev \
+    libopencv-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN rosdep init || true && rosdep update
+
+
+# librealsense (user-space libuvc)
+RUN apt-get update && apt-get install -y --no-install-recommends libusb-1.0-0-dev libudev-dev && rm -rf /var/lib/apt/lists/*
+WORKDIR /tmp
+RUN git clone --branch v2.56.1 https://github.com/IntelRealSense/librealsense.git && \
+    cd librealsense && rm -rf build && mkdir build && cd build && \
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DFORCE_LIBUVC=ON -DBUILD_EXAMPLES=OFF && \
+    make -j"$(nproc)" && make install && ldconfig
+
+# GTSAM from apt if available
+RUN apt-get update && apt-get install -y --no-install-recommends libgtsam-dev || true && \
+    rm -rf /var/lib/apt/lists/*
+
+# Convenience
+RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc
+WORKDIR /workspace
+

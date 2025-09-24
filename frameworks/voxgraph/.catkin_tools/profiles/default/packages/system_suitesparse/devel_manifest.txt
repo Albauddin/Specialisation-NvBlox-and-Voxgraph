@@ -1,0 +1,4 @@
+suitesparse/system_suitesparse
+/workspace/catkin_ws/devel/.private/system_suitesparse/share/system_suitesparse/cmake/system_suitesparseConfig.cmake /workspace/catkin_ws/devel/share/system_suitesparse/cmake/system_suitesparseConfig.cmake
+/workspace/catkin_ws/devel/.private/system_suitesparse/share/system_suitesparse/cmake/system_suitesparseConfig-version.cmake /workspace/catkin_ws/devel/share/system_suitesparse/cmake/system_suitesparseConfig-version.cmake
+/workspace/catkin_ws/devel/.private/system_suitesparse/lib/pkgconfig/system_suitesparse.pc /workspace/catkin_ws/devel/lib/pkgconfig/system_suitesparse.pc

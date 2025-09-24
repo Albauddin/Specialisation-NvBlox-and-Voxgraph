@@ -1,0 +1,4 @@
+minkindr/minkindr
+/workspace/catkin_ws/devel/.private/minkindr/share/minkindr/cmake/minkindrConfig.cmake /workspace/catkin_ws/devel/share/minkindr/cmake/minkindrConfig.cmake
+/workspace/catkin_ws/devel/.private/minkindr/share/minkindr/cmake/minkindrConfig-version.cmake /workspace/catkin_ws/devel/share/minkindr/cmake/minkindrConfig-version.cmake
+/workspace/catkin_ws/devel/.private/minkindr/lib/pkgconfig/minkindr.pc /workspace/catkin_ws/devel/lib/pkgconfig/minkindr.pc

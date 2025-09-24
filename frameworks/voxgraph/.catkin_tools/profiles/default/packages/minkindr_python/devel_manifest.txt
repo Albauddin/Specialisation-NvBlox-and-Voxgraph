@@ -1,0 +1,7 @@
+minkindr/minkindr_python
+/workspace/catkin_ws/devel/.private/minkindr_python/share/minkindr_python/cmake/minkindr_pythonConfig.cmake /workspace/catkin_ws/devel/share/minkindr_python/cmake/minkindr_pythonConfig.cmake
+/workspace/catkin_ws/devel/.private/minkindr_python/share/minkindr_python/cmake/minkindr_pythonConfig-version.cmake /workspace/catkin_ws/devel/share/minkindr_python/cmake/minkindr_pythonConfig-version.cmake
+/workspace/catkin_ws/devel/.private/minkindr_python/lib/libminkindr_python.so /workspace/catkin_ws/devel/lib/libminkindr_python.so
+/workspace/catkin_ws/devel/.private/minkindr_python/lib/python3/dist-packages/minkindr/__init__.py /workspace/catkin_ws/devel/lib/python3/dist-packages/minkindr/__init__.py
+/workspace/catkin_ws/devel/.private/minkindr_python/lib/python3/dist-packages/minkindr/libminkindr_python.so /workspace/catkin_ws/devel/lib/python3/dist-packages/minkindr/libminkindr_python.so
+/workspace/catkin_ws/devel/.private/minkindr_python/lib/pkgconfig/minkindr_python.pc /workspace/catkin_ws/devel/lib/pkgconfig/minkindr_python.pc

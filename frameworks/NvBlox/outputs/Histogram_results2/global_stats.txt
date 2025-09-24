@@ -1,0 +1,5 @@
+R: min=0.000 max=255.000 mean=98.153 std=42.419 count=4816359
+G: min=1.000 max=255.000 mean=97.180 std=42.557 count=4816359
+B: min=0.000 max=255.000 mean=95.947 std=43.594 count=4816359
+A: min=255.000 max=255.000 mean=255.000 std=0.011 count=4816359
+Y: min=1.140 max=255.000 mean=97.298 std=42.462 count=4816359

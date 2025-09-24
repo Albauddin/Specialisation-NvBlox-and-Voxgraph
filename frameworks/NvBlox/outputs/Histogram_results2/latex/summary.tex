@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\caption{Global per-vertex color statistics across all NVBlox meshes}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Channel} & \textbf{Min} & \textbf{Max} & \textbf{Mean} & \textbf{Std Dev} \\
+\hline
+R & 0.00 & 255.00 & 98.15 & 42.42 \\
+G & 1.00 & 255.00 & 97.18 & 42.56 \\
+B & 0.00 & 255.00 & 95.95 & 43.59 \\
+A & 255.00 & 255.00 & 255.00 & 0.01 \\
+Y (Luminance) & 1.14 & 255.00 & 97.30 & 42.46 \\
+\hline
+\end{tabular}
+\label{tab:nvblox_color_stats_global}
+\end{table}
+
+\noindent\textit{Memo:} The aggregated RGB channels span a wide dynamic range (close to 0--255) with balanced means and substantial standard deviation, indicating diverse, non-flat coloring. Luminance confirms the presence of both bright and dark regions. Alpha is typically constant (opaque) in these exports.

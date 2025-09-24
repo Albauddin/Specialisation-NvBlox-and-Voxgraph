@@ -1,0 +1,4 @@
+minkindr_ros/minkindr_conversions
+/workspace/catkin_ws/devel/.private/minkindr_conversions/share/minkindr_conversions/cmake/minkindr_conversionsConfig.cmake /workspace/catkin_ws/devel/share/minkindr_conversions/cmake/minkindr_conversionsConfig.cmake
+/workspace/catkin_ws/devel/.private/minkindr_conversions/share/minkindr_conversions/cmake/minkindr_conversionsConfig-version.cmake /workspace/catkin_ws/devel/share/minkindr_conversions/cmake/minkindr_conversionsConfig-version.cmake
+/workspace/catkin_ws/devel/.private/minkindr_conversions/lib/pkgconfig/minkindr_conversions.pc /workspace/catkin_ws/devel/lib/pkgconfig/minkindr_conversions.pc

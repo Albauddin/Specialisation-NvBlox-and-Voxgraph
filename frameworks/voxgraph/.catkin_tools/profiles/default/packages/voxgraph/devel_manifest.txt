@@ -1,0 +1,8 @@
+voxgraph/voxgraph
+/workspace/catkin_ws/devel/.private/voxgraph/share/voxgraph/cmake/voxgraphConfig-version.cmake /workspace/catkin_ws/devel/share/voxgraph/cmake/voxgraphConfig-version.cmake
+/workspace/catkin_ws/devel/.private/voxgraph/share/voxgraph/cmake/voxgraphConfig.cmake /workspace/catkin_ws/devel/share/voxgraph/cmake/voxgraphConfig.cmake
+/workspace/catkin_ws/devel/.private/voxgraph/lib/libvoxgraph.a /workspace/catkin_ws/devel/lib/libvoxgraph.a
+/workspace/catkin_ws/devel/.private/voxgraph/lib/voxgraph/voxgraph_mapping_node /workspace/catkin_ws/devel/lib/voxgraph/voxgraph_mapping_node
+/workspace/catkin_ws/devel/.private/voxgraph/lib/voxgraph/odometry_simulator /workspace/catkin_ws/devel/lib/voxgraph/odometry_simulator
+/workspace/catkin_ws/devel/.private/voxgraph/lib/voxgraph/registration_test_bench /workspace/catkin_ws/devel/lib/voxgraph/registration_test_bench
+/workspace/catkin_ws/devel/.private/voxgraph/lib/pkgconfig/voxgraph.pc /workspace/catkin_ws/devel/lib/pkgconfig/voxgraph.pc
