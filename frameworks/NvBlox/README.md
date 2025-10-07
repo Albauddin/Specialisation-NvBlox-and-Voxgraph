@@ -50,7 +50,7 @@ rviz2 -d $(ros2 pkg prefix isaac_ros_visual_slam --share)/rviz/default.cfg.rviz
 
 Launch NvBlox with your recorded ROS bag:
 ```bash
-ros2 launch nvblox_examples_bringup realsense_example.launch.py rosbag:=<your rosbag path>
+ros2 launch nvblox_examples_bringup realsense_example.launch.py rosbag:=<YOUR_ACTUAL_ROSBAG_PATH>
 ```
 
 ## 💾 Saving Meshes Automatically
@@ -66,7 +66,7 @@ Option 2 — Bash Command
 ```bash
 while true; do
   ros2 service call /nvblox_node/save_ply nvblox_msgs/srv/FilePath \
-  "{file_path: '/workspaces/isaac_ros-dev/datasets/Meshes/mesh_$(date +%H%M%S).ply'}"
+  "{file_path: '/<YOUR_ACTUAL_MESHES_PATH>s/mesh_$(date +%H%M%S).ply'}"
   sleep 2
 done
 ```
@@ -88,7 +88,17 @@ This script:
   - Computes the average color metrics across all saved meshes
 
 
+## 🗺️ Viewing the Meshes in CloudCompare
 
+Download and install CloudCompare to visualize and inspect the exported meshes:
+🔗 https://cloudcompare.org/index.html
+
+To launch CloudCompare:
+```bash
+flatpak run org.cloudcompare.CloudCompare
+```
+
+Then import the generated .ply meshes to analyze the 3D reconstruction results visually.
 
 
 
