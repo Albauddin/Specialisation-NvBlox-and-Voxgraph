@@ -25,7 +25,9 @@ This repository contains **two Docker-based environments**, each designed to rep
 
 
 ├── NvBlox/ # GPU-accelerated mapping framework (ROS 2 Humble)
+
 ├── Voxgraph/ # Pose-graph-based mapping framework (ROS 1 Noetic + OpenVINS)
+
 └── README.md # You are here
 
 
