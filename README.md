@@ -1,4 +1,4 @@
-# 🛰️ GPU-Accelerated 3D Colored Mapping for UAVs in Search & Rescue
+# 🛰️ Evaluation of GPU-Accelerated 3D Colored Mapping for UAVs in Search & Rescue
 
 In catastrophic situations, **rapid and accurate mapping** is essential to support mobile **Search & Rescue (SAR)** robots operating in challenging environments.  
 This project focuses on **reconstructing 3D colored maps using GPU-accelerated frameworks** to provide rescue teams with **fast and detailed real-time situational awareness**.
