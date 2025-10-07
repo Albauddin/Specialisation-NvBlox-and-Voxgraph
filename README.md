@@ -23,17 +23,17 @@ Future extensions include optimizing **UAV scanning strategies** (e.g., trajecto
 
 This repository contains **two Docker-based environments**, each designed to replicate the experimental setup and enable reproducible testing:
 
-
+```bash
 ├── NvBlox/ # GPU-accelerated mapping framework (ROS 2 Humble)
 ├── Voxgraph/ # Pose-graph-based mapping framework (ROS 1 Noetic + OpenVINS)
 └── README.md # You are here
-
+```
 
 
 Each folder includes:
-- Complete **Docker configuration** and build instructions  
-- **Launch files** and **recording scripts** for RealSense D455  
-- Detailed documentation of the experimental setup
+  - Complete **Docker configuration** and build instructions  
+  - **Launch files** and **recording scripts** for RealSense D455  
+  - Detailed documentation of the experimental setup
 
 ---
 
