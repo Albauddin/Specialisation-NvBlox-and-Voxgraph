@@ -78,7 +78,7 @@ This saves the reconstructed .ply mesh files every 2 seconds for later evaluatio
 
 After mapping, analyze the color distribution and fidelity of the reconstructed meshes:
 ```bash
-python3 batch_ply_color_hist.py
+python3 batch_ply_color_hist.py /<YOUR_MESHES_DIRECTORY_PATH>
 ```
 
 This script:
@@ -99,6 +99,78 @@ flatpak run org.cloudcompare.CloudCompare
 ```
 
 Then import the generated .ply meshes to analyze the 3D reconstruction results visually.
+
+
+# 🗺️ Mapping Results from This Project
+
+## 🧩 Complete Map
+<img width="100%" alt="GetImage (9)" src="https://github.com/user-attachments/assets/e74a1341-d6fa-480a-b964-d89bbfa32a0a" />
+
+---
+
+## 🚗 Car Scene
+<p align="center">
+  <img width="48%" alt="Car Scene 1" src="https://github.com/user-attachments/assets/77a1cbbe-a1ed-4d86-9822-7dda8fe4e6ad" />
+  <img width="48%" alt="Car Scene 2" src="https://github.com/user-attachments/assets/375c8443-8bda-4a34-8aa9-5dadd945092a" />
+</p>
+
+---
+
+## 🪟 Window
+<img width="90%" alt="GetImage (3)" src="https://github.com/user-attachments/assets/d52ba27d-9a21-442d-b353-21ae884d4f40" />
+
+---
+
+## 🌿 Plants
+<p align="center">
+  <img width="48%" alt="Plants 1" src="https://github.com/user-attachments/assets/46eb5fac-ffd5-4cbc-816c-c399f09722b8" />
+  <img width="48%" alt="Plants 2" src="https://github.com/user-attachments/assets/03534b32-b25e-4820-8379-283dd0bb7dbd" />
+</p>
+
+---
+
+## 🚪 Garage
+<img width="90%" alt="GetImage (5)" src="https://github.com/user-attachments/assets/711967e6-b0bc-4445-932b-10821ba04e16" />
+
+---
+
+## 🗑️ Trash Bin
+<img width="80%" alt="GetImage (6)" src="https://github.com/user-attachments/assets/24edd88d-d276-4598-ab7f-f3958e0fbe0d" />
+
+---
+
+## ⚠️ Misalignment
+<img width="85%" alt="GetImage (7)" src="https://github.com/user-attachments/assets/426a324a-aa4c-4be1-ab55-4d0e6d93312a" />
+
+---
+
+## 🌬️ Ventilation Detail
+<img width="90%" alt="GetImage (8)" src="https://github.com/user-attachments/assets/ed28a342-e1be-4f6a-a8ee-6d96675d3a92" />
+
+---
+
+## 💡 Wall Lamp Detail
+<p align="center">
+  <img width="48%" alt="Wall Lamp 1" src="https://github.com/user-attachments/assets/13b73010-1837-4f38-9d69-4564d85a4289" />
+  <img width="48%" alt="Wall Lamp 2" src="https://github.com/user-attachments/assets/b93b6de7-748e-48dd-bd24-3c3d0353c6ed" />
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
