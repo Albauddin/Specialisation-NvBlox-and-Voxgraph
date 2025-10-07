@@ -21,12 +21,31 @@ This includes:
 
 Once the setup is complete, start your NvBlox container:
 
-``ˋbash
+```bash
 docker start isaac_ros_dev-x86_64-container
-ˋˋˋ
+```
 
 run this to open the container in terminal
 ```bash
 docker exec -it isaac_ros_dev-x86_64-container bash
-ˋˋˋ
+```
+
+## 🎥 Recording a ROS Bag
+
+You can record your own dataset following NVIDIA’s RealSense setup guide:
+🔗 https://nvidia-isaac-ros.github.io/getting_started/hardware_setup/sensors/realsense_setup.html
+
+To visualize and record using the RealSense Viewer tool:
+```bash
+realsense-viewer
+```
+
+
+
+
+
+
+
+
+
 
