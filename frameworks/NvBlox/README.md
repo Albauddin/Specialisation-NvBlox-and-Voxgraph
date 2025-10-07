@@ -30,6 +30,26 @@ run this to open the container in terminal
 docker exec -it isaac_ros_dev-x86_64-container bash
 ```
 
+## 🧭 Install OpenVINS for ROS 2
+
+For visual–inertial localization, install OpenVINS (ROS 2 version) following the official documentation:
+
+🔗 https://docs.openvins.com/gs-installing.html
+
+This package provides high-accuracy visual–inertial odometry that NvBlox can use as a localization source during reconstruction.
+
+## 🔁 Remapping Topics for OpenVINS and NvBlox
+
+After installing OpenVINS, make sure that **the topic names and coordinate frames** used by OpenVINS match those expected by NvBlox.
+
+You can adjust these mappings directly in the **NvBlox YAML configuration file** (or in your custom launch file) to ensure the correct data flow between realsense, OpenVINS and NvBlox.
+
+
+
+
+
+
+
 ## 🎥 Recording a ROS Bag
 
 You can record your own dataset following NVIDIA’s RealSense setup guide:
