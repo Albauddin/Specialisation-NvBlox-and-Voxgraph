@@ -1,0 +1,22 @@
+digraph G {
+"global" -> "imu"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 200.22\nBuffer length: 4.989\nMost recent transform: 1757693847.487\nOldest transform: 1757693842.497\n"];
+"imu" -> "cam1"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 200.221\nBuffer length: 4.989\nMost recent transform: 1757693847.487\nOldest transform: 1757693842.497\n"];
+"imu" -> "cam0"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 200.221\nBuffer length: 4.989\nMost recent transform: 1757693847.487\nOldest transform: 1757693842.497\n"];
+"odom" -> "camera_imu_optical_frame"[label=" Broadcaster: /ImuFilter\nAverage rate: 199.804\nBuffer length: 5.0\nMost recent transform: 1757693847.482\nOldest transform: 1757693842.482\n"];
+"camera_link" -> "camera_depth_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_depth_frame" -> "camera_depth_optical_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_link" -> "camera_color_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_aligned_depth_to_color_frame" -> "camera_color_optical_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_link" -> "camera_aligned_depth_to_color_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_link" -> "camera_infra1_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_infra1_frame" -> "camera_infra1_optical_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_link" -> "camera_infra2_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_infra2_frame" -> "camera_infra2_optical_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_link" -> "camera_gyro_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_link" -> "camera_accel_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera_accel_frame" -> "camera_accel_optical_frame"[label=" Broadcaster: /play_1767894911593703195\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1757693847.494874"[ shape=plaintext ] ;
+}->"camera_link";
+}
