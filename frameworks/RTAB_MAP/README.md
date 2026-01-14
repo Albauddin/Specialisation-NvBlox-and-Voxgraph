@@ -59,8 +59,6 @@ git clone https://github.com/ethz-asl/gtsam_catkin.git
 
 After cloning all dependencies, build everything:
 ```bash
-cd /workspace/catkin_ws/scripts
-chmod +x /workspace/catkin_ws/scripts/splot_orbslam2_map.py
 catkin build
 ```
 
@@ -71,6 +69,8 @@ source devel/setup.bash
 
 ## 🧱 Make the python script executable
 ```bash
+cd /workspace/catkin_ws/scripts
+chmod +x /workspace/catkin_ws/scripts/save_rtabmap_cloud
 source devel/setup.bash
 ```
 
