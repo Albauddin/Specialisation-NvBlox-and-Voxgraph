@@ -67,7 +67,7 @@ Then source again:
 source devel/setup.bash
 ```
 
-## 🧱 Make the python script executable
+## 🧱 Make the python script executable (DON'T CHANGE THIS FOR EAR_LAB)
 ```bash
 cd /workspace/catkin_ws/scripts
 chmod +x /workspace/catkin_ws/scripts/save_rtabmap_cloud.py
