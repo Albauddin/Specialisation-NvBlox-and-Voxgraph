@@ -55,6 +55,12 @@ git clone https://github.com/ethz-asl/ceres_catkin.git
 git clone https://github.com/ethz-asl/gtsam_catkin.git
 ```
 
+## Here you can configure some settings if necessary
+
+For orb slam in Ros_stereo.cc add the function SaveCloudMap
+and the file ORB_SLAM2_MapPoints.xyz will besaved
+
+
 ## 🧱 Build the Workspace
 
 After cloning all dependencies, build everything:
