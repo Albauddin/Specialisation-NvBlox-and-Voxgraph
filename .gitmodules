@@ -1,0 +1,6 @@
+[submodule "frameworks/ORB-SLAM2/src/ORB_SLAM2_NOETIC"]
+	path = frameworks/ORB-SLAM2/src/ORB_SLAM2_NOETIC
+	url = https://github.com/raulmur/ORB_SLAM2.git
+[submodule "frameworks/RTAB_MAP/src/Sensor-Fusion-Realsense-Camera"]
+	path = frameworks/RTAB_MAP/src/Sensor-Fusion-Realsense-Camera
+	url = https://github.com/luxi-huang/Sensor-Fusion-Realsense-Camera.git
