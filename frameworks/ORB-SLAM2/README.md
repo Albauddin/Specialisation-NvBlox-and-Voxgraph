@@ -55,7 +55,7 @@ git clone https://github.com/ethz-asl/ceres_catkin.git
 git clone https://github.com/ethz-asl/gtsam_catkin.git
 ```
 
-## Here you can configure some settings if necessary
+## Here you can configure some settings if necessary (DON'T CHANGE THIS FOR EAR_LAB)
 
 For orb slam in Ros_stereo.cc add the function SaveCloudMap
 and the file map_cloud.ply will besaved
