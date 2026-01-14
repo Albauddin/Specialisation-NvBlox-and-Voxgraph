@@ -1,4 +1,4 @@
-# 🧭 Voxgraph: Submap-Based TSDF Mapping (ROS 1 Noetic)
+# 🧭 ORB-SLAM2:(ROS 1 Noetic)
 
 This directory provides the configuration and instructions for running **Voxgraph**, a submap-based 3D reconstruction framework from **ETH Zürich**, using stereo RGB-D input and **OpenVINS** visual–inertial odometry.  
 The containerized setup enables reproducible mapping experiments on UAV datasets with the **Intel RealSense D455** and **NVIDIA Jetson Orin Nano**.
