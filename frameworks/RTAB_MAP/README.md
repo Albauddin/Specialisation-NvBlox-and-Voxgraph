@@ -70,7 +70,7 @@ source devel/setup.bash
 ## 🧱 Make the python script executable
 ```bash
 cd /workspace/catkin_ws/scripts
-chmod +x /workspace/catkin_ws/scripts/save_rtabmap_cloud
+chmod +x /workspace/catkin_ws/scripts/save_rtabmap_cloud.py
 source devel/setup.bash
 ```
 
