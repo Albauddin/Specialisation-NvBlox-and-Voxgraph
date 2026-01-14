@@ -59,7 +59,8 @@ git clone https://github.com/ethz-asl/gtsam_catkin.git
 
 After cloning all dependencies, build everything:
 ```bash
-cd /workspace/catkin_ws
+cd /workspace/catkin_ws/scripts
+chmod +x /workspace/catkin_ws/scripts/splot_orbslam2_map.py
 catkin build
 ```
 
@@ -68,6 +69,10 @@ Then source again:
 source devel/setup.bash
 ```
 
+## 🧱 Make the python script executable
+```bash
+source devel/setup.bash
+```
 
 ## 🚀 Running in Real-Time (Live Input)
 
