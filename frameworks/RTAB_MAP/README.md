@@ -85,12 +85,12 @@ Launch the following components in separate terminals inside the container.
 ```bash
 roscore 
 ```
-2️⃣ set simulation time and run the rosbag
+2️⃣ set simulation time and run the rosbag (Terminal 2)
 ```bash
 rosparam set use_sim_time true 
 rosbag play  /workspace/catkin_ws/dataset/bags/scene_raw.bag --clock --pause -r 1.0 
 ```
-3️⃣ run the ORB-SLAM2 Stereo
+3️⃣ run the ORB-SLAM2 Stereo (Terminal 3)
 ```bash
 roslaunch my_realsense D435i_mapping.launch 
 ```
