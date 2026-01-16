@@ -9,13 +9,13 @@ RTAB-Map (Real-Time Appearance-Based Mapping) is a graph-based SLAM system desig
 
 Key characteristics of RTAB-Map include:
 
-#Appearance-based loop closure detection using visual feature descriptors,
+Appearance-based loop closure detection using visual feature descriptors,
 
-#Graph optimization for global pose consistency,
+Graph optimization for global pose consistency,
 
-#Support for RGB-D cameras, including Intel RealSense sensors,
+Support for RGB-D cameras, including Intel RealSense sensors,
 
-#Generation of dense point clouds and 3D maps from accumulated depth data.
+Generation of dense point clouds and 3D maps from accumulated depth data.
 
 In this project, RTAB-Map is applied to the same RealSense-based datasets as the other SLAM frameworks to ensure comparability. Its outputs—camera trajectories, pose graphs, and reconstructed point clouds—are used for quantitative and qualitative comparison against feature-based and TSDF-based mapping approaches.
 
