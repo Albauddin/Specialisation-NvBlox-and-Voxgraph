@@ -1,7 +1,23 @@
 # 🧭 RTAB-MAP:(ROS 1 Noetic)
 
-This directory provides the configuration and instructions for running **Voxgraph**, a submap-based 3D reconstruction framework from **ETH Zürich**, using stereo RGB-D input and **OpenVINS** visual–inertial odometry.  
-The containerized setup enables reproducible mapping experiments on UAV datasets with the **Intel RealSense D455** and **NVIDIA Jetson Orin Nano**.
+For this project, RTAB-Map is used via the ROS wrapper provided in the repository
+https://github.com/laukik-hase/rsslam_ws/tree/master/src/rtabmap_ros
+,
+which contains a ROS 1–compatible integration of the RTAB-Map framework.
+
+RTAB-Map (Real-Time Appearance-Based Mapping) is a graph-based SLAM system designed for long-term and large-scale mapping. It performs simultaneous localization and mapping using visual or RGB-D sensor data, with optional support for additional inputs such as IMU or wheel odometry. The system incrementally builds a pose graph in which nodes represent robot poses and edges encode spatial constraints derived from visual odometry and loop closures.
+
+Key characteristics of RTAB-Map include:
+
+Appearance-based loop closure detection using visual feature descriptors,
+
+Graph optimization for global pose consistency,
+
+Support for RGB-D cameras, including Intel RealSense sensors,
+
+Generation of dense point clouds and 3D maps from accumulated depth data.
+
+In this project, RTAB-Map is applied to the same RealSense-based datasets as the other SLAM frameworks to ensure comparability. Its outputs—camera trajectories, pose graphs, and reconstructed point clouds—are used for quantitative and qualitative comparison against feature-based and TSDF-based mapping approaches.
 
 ---
 
@@ -20,7 +36,7 @@ docker build -f Dockerfile.base -t voxgraph-dev:base .
 
 Start the container with full device and display access:
 ```bash
-docker run -it --name orb_slam2_dev --net=host --privileged\
+docker run -it --name RTAB_MAP --net=host --privileged\
   -e DISPLAY
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw
   -v /dev:/dev
