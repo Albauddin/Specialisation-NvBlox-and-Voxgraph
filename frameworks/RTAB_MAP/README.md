@@ -36,7 +36,7 @@ docker build -f Dockerfile.base -t voxgraph-dev:base .
 
 Start the container with full device and display access:
 ```bash
-docker run -it --name RTAB_MAP --net=host --privileged\
+docker run -it --rm --name RTAB_MAP --net=host --privileged\
   -e DISPLAY
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw
   -v /dev:/dev
@@ -56,10 +56,11 @@ Clone the required packages inside the container:
 git clone https://github.com/NERanger/ORB-SLAM2-with-D435i.git
 ```
 
-## Here you can configure some settings if necessary (DON'T CHANGE THIS FOR EAR_LAB)
-
-For orb slam in Ros_stereo.cc add the function SaveCloudMap
-and the file map_cloud.ply will besaved
+## Here you can configure some settings if necessary 
+make the python script executable
+```bash
+chmod +x map_cloud.py
+```
 
 
 ## 🧱 Build the Workspace
@@ -91,12 +92,7 @@ rosbag play  /workspace/catkin_ws/dataset/bags/scene_raw.bag --clock --pause -r 
 ```
 3️⃣ run the ORB-SLAM2 Stereo
 ```bash
-rosrun ORB_SLAM2 Stereo \ 
-  /workspace/catkin_ws/src/ORB_SLAM2_NOETIC/Vocabulary/ORBvoc.txt \ 
-  /workspace/catkin_ws/src/ORB_SLAM2_NOETIC/Examples/ROS/ORB_SLAM2/Realsense_AsusStyle_848x480.yaml \ 
-  false \ 
-  /camera/left/image_raw:=/camera/infra1/image_rect_raw \ 
-  /camera/right/image_raw:=/camera/infra2/image_rect_raw 
+roslaunch my_realsense D435i_mapping.launch 
 ```
 
 
