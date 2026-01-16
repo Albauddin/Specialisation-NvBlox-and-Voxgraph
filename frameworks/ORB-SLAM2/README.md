@@ -1,13 +1,31 @@
 # 🧭 ORB-SLAM2:(ROS 1 Noetic)
 
-This directory provides the configuration and instructions for running **Voxgraph**, a submap-based 3D reconstruction framework from **ETH Zürich**, using stereo RGB-D input and **OpenVINS** visual–inertial odometry.  
-The containerized setup enables reproducible mapping experiments on UAV datasets with the **Intel RealSense D455** and **NVIDIA Jetson Orin Nano**.
+For this project, we use the repository
+https://github.com/NERanger/ORB-SLAM2-with-D435i
+,
+which is a RealSense-adapted fork of ORB-SLAM2 with native support for Intel RealSense stereo and RGB-D cameras.
+
+This repository was selected because it provides:
+
+Direct integration with RealSense D435i/D455 (stereo IR + optional IMU support),
+
+A ready-to-use ROS 1 Noetic wrapper, simplifying deployment on recorded rosbags and live camera streams,
+
+Minimal modification of the original ORB-SLAM2 core, preserving algorithmic correctness while improving sensor compatibility.
+
+ORB-SLAM2 is a feature-based visual SLAM system that estimates the camera trajectory and reconstructs a sparse 3D map of the environment. It relies on:
+
+ORB feature extraction and matching,
+
+Keyframe-based tracking and local mapping,
+
+Graph-based pose optimization with loop closure detection for global consistency.
 
 ---
 
 ## 📦 Build the Container
 
-From your workspace, build the base Docker image:
+From your workspace, build the base Docker image:if you already done the Voxgraph method this part is not necessary 
 
 ```bash
 cd /<YOUR_WORKSPACE_PATH>/workspaces/Voxgraph/docker
@@ -20,11 +38,11 @@ docker build -f Dockerfile.base -t voxgraph-dev:base .
 Start the container with full device and display access:
 ```bash
 docker run -it --rm --name vox_dev --net=host --privileged \
-  -e DISPLAY \
-  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-  -v /dev:/dev \
-  -v /<YOUR_WORKSPACE_PATH>/workspaces/Voxgraph:/workspace/catkin_ws \
-  voxgraph-dev:base
+docker run -it --name orb_slam2_dev_2nd --net=host --privileged\
+  -e DISPLAY
+-v /tmp/.X11-unix:/tmp/.X11-unix:rw
+-v /dev:/dev
+-v /<YOUR_WORKSPACE_PATH>:/workspace/catkin_ws
 ```
 
 Then source your workspace:
@@ -32,27 +50,12 @@ Then source your workspace:
 source /workspace/catkin_ws/devel/setup.bash
 ```
 
-## 📚 Fetch Dependencies
+## 📚 clone the repositoriy
 
 Clone the required packages inside the container:
+(https://github.com/NERanger/ORB-SLAM2-with-D435i)
 ```bash
-cd /workspace/catkin_ws/src
-
-git clone https://github.com/catkin/catkin_simple.git 
-git clone https://github.com/ethz-asl/eigen_catkin.git 
-git clone https://github.com/ethz-asl/glog_catkin.git 
-git clone https://github.com/ethz-asl/gflags_catkin.git 
-git clone https://github.com/ethz-asl/eigen_checks.git 
-git clone https://github.com/ethz-asl/minkindr.git 
-git clone https://github.com/ethz-asl/minkindr_ros.git 
-git clone https://github.com/ethz-asl/kindr.git -b catkin 
-git clone https://github.com/ethz-asl/catkin_boost_python_buildtool.git 
-git clone https://github.com/ethz-asl/numpy_eigen.git 
-git clone https://github.com/ethz-asl/protobuf_catkin.git 
-git clone https://github.com/pal-robotics/ddynamic_reconfigure.git 
-git clone https://github.com/ethz-asl/cblox.git   
-git clone https://github.com/ethz-asl/ceres_catkin.git 
-git clone https://github.com/ethz-asl/gtsam_catkin.git
+git clone https://github.com/NERanger/ORB-SLAM2-with-D435i.git
 ```
 
 ## Here you can configure some settings if necessary (DON'T CHANGE THIS FOR EAR_LAB)
@@ -75,82 +78,33 @@ source devel/setup.bash
 ```
 
 
-## 🚀 Running in Real-Time (Live Input)
+## 🧩 Offline Mapping from ROS Bag
 
 Launch the following components in separate terminals inside the container.
 
-1️⃣ RealSense Camera
+1️⃣ run the ros core (Terminal 1)
 ```bash
-roslaunch realsense2_camera rs_camera.launch \
-  enable_depth:=true enable_color:=true \
-  depth_module.profile:=848x480x30 \
-  color_width:=848 color_height:=480 color_fps:=30 \
-  enable_pointcloud:=true align_depth:=true \
-  enable_infra1:=true enable_infra2:=true \
-  enable_gyro:=true enable_accel:=true \
-  unite_imu_method:=linear_interpolation \
-  initial_reset:=true queue_size:=1 publish_tf:=false
+roscore 
 ```
-2️⃣ OpenVINS Localization
+2️⃣ set simulation time and run the rosbag
 ```bash
-roslaunch /workspace/catkin_ws/launch/ov_realsense.launch --screen
+rosparam set use_sim_time true 
+rosbag play  /workspace/catkin_ws/dataset/bags/scene_raw.bag --clock --pause -r 1.0 
 ```
-3️⃣ Voxgraph Mapping
+3️⃣ run the ORB-SLAM2 Stereo
 ```bash
-roslaunch voxgraph voxgraph_realtime.launch show_rviz:=true
+rosrun ORB_SLAM2 Stereo \ 
+  /workspace/catkin_ws/src/ORB_SLAM2_NOETIC/Vocabulary/ORBvoc.txt \ 
+  /workspace/catkin_ws/src/ORB_SLAM2_NOETIC/Examples/ROS/ORB_SLAM2/Realsense_AsusStyle_848x480.yaml \ 
+  false \ 
+  /camera/left/image_raw:=/camera/infra1/image_rect_raw \ 
+  /camera/right/image_raw:=/camera/infra2/image_rect_raw 
 ```
-  ⚠️ Note: Real-time performance on Jetson Orin Nano may vary. For best results, record a rosbag and replay it at a slower rate (0.5–0.1× speed).
 
 
 ## 🎥 Record a ROS Bag
 
-To record data for offline mapping:
-
-1️⃣ Launch RealSense
-```bash
-roslaunch realsense2_camera rs_camera.launch \
-  enable_depth:=true enable_color:=true \
-  depth_module.profile:=848x480x30 \
-  color_width:=848 color_height:=480 color_fps:=30 \
-  enable_pointcloud:=true align_depth:=true \
-  enable_infra1:=true enable_infra2:=true \
-  enable_gyro:=true enable_accel:=true \
-  unite_imu_method:=linear_interpolation \
-  initial_reset:=true queue_size:=1 publish_tf:=true
-```
-2️⃣ Record Bag with Required Topics
-```bash
-rosbag record -O scene_raw.bag -b 4096 \
-  /camera/infra1/image_rect_raw \
-  /camera/infra1/camera_info \
-  /camera/infra2/image_rect_raw \
-  /camera/infra2/camera_info \
-  /camera/imu \
-  /camera/depth/color/points \
-  /camera/color/image_raw \
-  /camera/color/camera_info \
-  /tf \
-  /tf_static
-```
-
-## 🧩 Offline Mapping from ROS Bag
-Terminal 1 – Core
-```bash
-roscore
-```
-Terminal 2 – OpenVINS Localization
-```bash
-rosparam set use_sim_time true
-roslaunch /workspace/catkin_ws/launch/ov_realsense.launch use_sim_time:=true
-```
-Terminal 3 – Voxgraph Mapping
-```bash
-roslaunch voxgraph voxgraph_realtime.launch show_rviz:=true use_sim_time:=true
-```
-Terminal 4 – Play Rosbag
-```bash
-rosbag play scene_raw.bag --clock --rate 0.5
-```
+assuming you already have the recorede rosbag from Voxgraph framework
 
 
 ## 🗺️ Visualization
