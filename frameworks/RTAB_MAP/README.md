@@ -53,7 +53,7 @@ source /workspace/catkin_ws/devel/setup.bash
 Clone the required packages inside the container:
 (https://github.com/NERanger/ORB-SLAM2-with-D435i)
 ```bash
-git clone https://github.com/NERanger/ORB-SLAM2-with-D435i.git
+git clone https://github.com/laukik-hase/rsslam_ws.git
 ```
 
 ## Here you can configure some settings if necessary 
