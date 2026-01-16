@@ -37,12 +37,11 @@ docker build -f Dockerfile.base -t voxgraph-dev:base .
 
 Start the container with full device and display access:
 ```bash
-docker run -it --rm --name vox_dev --net=host --privileged \
 docker run -it --name orb_slam2_dev_2nd --net=host --privileged\
   -e DISPLAY
--v /tmp/.X11-unix:/tmp/.X11-unix:rw
--v /dev:/dev
--v /<YOUR_WORKSPACE_PATH>:/workspace/catkin_ws
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw
+  -v /dev:/dev
+  -v /<YOUR_WORKSPACE_PATH>:/workspace/catkin_ws
 ```
 
 Then source your workspace:
