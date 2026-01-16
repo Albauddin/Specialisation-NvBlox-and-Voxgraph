@@ -37,7 +37,7 @@ docker build -f Dockerfile.base -t voxgraph-dev:base .
 
 Start the container with full device and display access:
 ```bash
-docker run -it --name orb_slam2_dev_2nd --net=host --privileged\
+docker run -it --rm --name orb_slam2_dev_2nd --net=host --privileged\
   -e DISPLAY
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw
   -v /dev:/dev
